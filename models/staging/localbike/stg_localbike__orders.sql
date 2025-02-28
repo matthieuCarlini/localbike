@@ -5,5 +5,5 @@ select order_id
   , required_date
   , shipped_date
   , store_id
-  , staff_id
+  , CAST (staff_id AS string) AS staff_id
 from {{ source('localbike', 'orders') }}
