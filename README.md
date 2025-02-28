@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
+Projet DBT de fin de formation Databird
+exemple d'analyse sur le dataset localbike
 
-### Using the starter project
+### Computing
 
-Try running the following commands:
-- dbt run
-- dbt test
+les données de la base opérationnelle sont dans bigquery : localbike
+le données de traitement dbt sont dans bigquery : Databird
 
+### git
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+le projet est vesrsionné sur github : https://github.com/matthieuCarlini/localbike
+
+### Structuration DBT
+
+utilisation des couches bronze, silver et gold de l'architecture medaillon
+- le bronze sera de type ODS, sans transformation par rapport à la source excepté la mise de FK si nécessaire
+- le silver sera de type DWH, avec dataquality et jointures, mais un minimum voire pas de calculs et d'agrégations
+- le gold contiendra le DM
+
