@@ -1,10 +1,11 @@
 WITH manager as (
-                SELECT CAST(staff_id AS string) as staff_id
+                SELECT  staff_id
                         , first_name as manager_first_name
                         , last_name as manager_last_name
                 FROM {{ ref("stg_localbike__staffs") }}
                 )
-SELECT  sta.first_name
+SELECT  sta.staff_id
+        , sta.first_name
         , sta.last_name
         , sto.store_id
         , sto.store_name
