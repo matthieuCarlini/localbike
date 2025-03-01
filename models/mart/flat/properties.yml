@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: mrt_flat_orderitem
+    description: order item flattened mart. OBT for all-purposes analysis
+    columns:
+      - name: order_item_id
+        description: "Grain of the mart"
+      - name: orderitem_amount
+        description: "amount of order item"

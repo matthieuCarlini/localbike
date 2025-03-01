@@ -46,3 +46,10 @@ models:
       localbike:
         schema: int_localbike
         materialized: view
+    mart:
+      flat:
+        schema: mrt_localbike
+        materialized: table
+      calculated:
+        schema: mrt_localbike
+        materialized: table

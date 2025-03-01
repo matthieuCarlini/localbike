@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_localbike__bikes
+  - name: int_localbike__dim_bike
     columns:
       - name: product_id
         description: "Primary key"
@@ -10,31 +10,31 @@ models:
           - not_null
           - dbt_expectations.expect_column_to_exist
 
-  - name: int_localbike__hierarchy
+  - name: int_localbike__dim_staff_hierarchy
     columns:
       - name: staff_id
         description: "Primary key"
         tests:
           - unique
           - not_null
+
+  - name: int_localbike__dim_geo
+    columns:
+      - name: zip_code
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
           
-  - name: int_localbike__orders
+  - name: int_localbike__fact_order_item
     columns:
       - name: order_item_id
         description: "Primary key"
         tests:
           - unique
           - not_null
-          
-  - name: int_localbike__staffs
-    columns:
-      - name: staff_id
-        description: "Primary key"
-        tests:
-          - unique
-          - not_null
-          
-  - name: int_localbike__stocks
+                 
+  - name: int_localbike__fact_stock
     columns:
       - name: stock_id
         description: "Primary key"
