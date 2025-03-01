@@ -6,4 +6,5 @@ select  customer_id
         , street
         , city
         , state
+        , zip_code
 from {{ source('localbike', 'customers') }}
